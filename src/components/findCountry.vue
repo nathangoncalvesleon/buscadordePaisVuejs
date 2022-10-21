@@ -17,8 +17,10 @@
 
       <div v-for="flag in flags" :key="flag.name">
         <ul>
-            
+            <a :href='flag.maps.googleMaps' target="_blank">
+
             <img :src="flag.flags.png" alt="Bandeira" />
+            </a>
         </ul>
       </div>
 
@@ -42,11 +44,11 @@
       <p>Região: {{ country.region }}</p>
       <p>Sub-região: {{ country.subregion }}</p>
       <p>Domínio: {{ country.topLevelDomain }}</p>
-      <p>Moedas: {{ country.currencies 
-        
+      <p>Moedas: {{ country.currencies
+      
       }}</p>
       <p>Idiomas: {{ country.languages
-        
+      
       }}</p>
       <p>Fronteiras: {{ country.borders
       }}</p>
@@ -55,7 +57,7 @@
         <h3>Bandeira</h3>
         <ul>
           <img :src="country.flags.png" alt="Bandeira" />
-         
+
         </ul>
       </div>
 
@@ -86,7 +88,7 @@ export default {
     return {
       search: '',
       flags: {
-        
+
       },
       country: {
 
@@ -111,7 +113,7 @@ export default {
       fetch(`https://restcountries.com/v3.1/all`)
         .then(response => response.json())
         .then(data => {
-          
+
           this.flags = data
           console.log(this.flags)
 
@@ -122,6 +124,8 @@ export default {
         })
 
     },
+
+    
 
   },
 
@@ -157,14 +161,14 @@ h2 {
   grid-gap: 1rem;
   padding: 1rem;
 
-  
-  
-    
-  
-  
+
+
+
+
+
 }
 
-img{
+img {
   width: 100%;
   display: grid;
   justify-content: center;
@@ -185,10 +189,10 @@ img{
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr;
   grid-template-areas: "a b c"
-                       "d e f"
-                       "g h i";
+    "d e f"
+    "g h i";
 
-                       
+
 
 
   object-position: center;
@@ -222,8 +226,8 @@ ul {
   grid-auto-columns: 4fr;
   grid-auto-rows: 4fr;
   grid-template-areas: "a b c"
-                       "d e f"
-                       "g h i";
+    "d e f"
+    "g h i";
 
   justify-content: center;
   align-items: center;
